@@ -221,7 +221,7 @@ if(yes){
 				initClock = new binaryClock({
 					width: 200,
 					height: 30,
-					labels: true,
+					labels: false,
 					labelcolor: defaultColors.label,
 					emptybitcolor: defaultColors.ebitColor,
 					filledbitcolor: defaultColors.fBitColor
@@ -241,7 +241,7 @@ if(yes){
 		<h3>Please enter data</h3>
 		<hr>
 		<label for="labels">Show Labels?:</label>
-		<span><i>show</i></span><input type="checkbox" checked="" name="label" value="true">
+		<span><i>show</i></span><input type="checkbox"  name="label" value="true">
 		<br>
 		<br>
 		<label for="width">Width:</label>
@@ -278,7 +278,7 @@ if(yes){
 				},
 				{
 					object: find('input[name=label').element,
-					value: true,
+					value: false,
 					name: 'label'
 				},
 				{
@@ -310,7 +310,7 @@ if(yes){
 						emptybitcolor: elements[4].value,
 						filledbitcolor: elements[5].value
 					})
-					showCode()
+					showCode();
 				}
 			})
 
