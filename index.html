@@ -162,7 +162,16 @@
 	<div class="innerDiv">
 		<h3>Do you want Binary Clock in your web page?</h3>
 		<br>
-		<script type='text/javascript' class='binaryClock'> var tempcl =  new binaryClock({	    width: 300, 	    height: 50,	    labels: true,	    labelcolor: 'rgba(255,100,0,0.4)',	    emptybitcolor: 'rgba(255,100,0,0.6)',	    filledbitcolor: 'rgba(255,100,0,0.9)'})</script>
+		<script type='text/javascript' class='binaryClock'> 
+			var tempcl =  new binaryClock({	    
+				width: 300, 	    
+				height: 50,	    
+				labels: true,	    
+				labelcolor: 'rgba(255,100,0,0.4)',	    
+				emptybitcolor: 'rgba(255,100,0,0.6)',	    
+				filledbitcolor: 'rgba(255,100,0,0.9)'
+			});
+		</script>
 		<pre>
 		<code>
 if(yes){
@@ -177,19 +186,29 @@ if(yes){
 	</div>
 	<script type="text/javascript">
 	var initClock = null
+	var defaultColors = {
+		label: '#1a3c6c',
+		ebitColor: '#6d6ecc',
+		fBitColor: '#ff0000'
+	}
+
+
 		window.onload = function(){
+			document.getElementsByName('labelcolor')[0].value = defaultColors.label
+			document.getElementsByName('filledbitcolor')[0].value = defaultColors.fBitColor
+			document.getElementsByName('emptybitcolor')[0].value = defaultColors.ebitColor
+			
 			document.querySelector('.followme').onclick=function(){
 				document.querySelector('.hidden').style.display='block'
 				document.querySelector('.nohidden').style.display='none'
-				// tempcl.remove()
 				tempcl.srcRemove()
 				initClock = new binaryClock({
 					width: 200,
 					height: 30,
 					labels: true,
-					labelcolor: 'red',
-					emptybitcolor: 'blue',
-					filledbitcolor: 'yellow'
+					labelcolor: defaultColors.label,
+					emptybitcolor: defaultColors.ebitColor,
+					filledbitcolor: defaultColors.fBitColor
 				})
 			}
 		}
