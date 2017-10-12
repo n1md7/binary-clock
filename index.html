@@ -1,9 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Binary Clock</title>
+	<meta name="description" content="Binary Clock API, just one step to inplement it in your webpage">
+	<meta name="author" content="Bichiko(harry) Kodua">
+	<meta name="keywords" content="clock, binary, API, Plugin">
+	<meta property="og:title" content="Binary-Clock">
+	<meta property="og:description" content="Binary Clock API, just one step to inplement it in your webpage">
+	<meta property="og:image" content="https://bichiko.github.io/binary-clock/logo.png">
+	<meta http-equiv="content-type" content="text/html;charset=UTF-8">
 </head>
+<link href="https://fonts.googleapis.com/css?family=Bree+Serif" rel="stylesheet">
  <style type="text/css">
+ h1{
+	font-family: 'Nosifer', cursive;
+ }
+ h3,h6,p{
+ 	font-family: 'Bree Serif', serif;
+ }
  	h1,h3,h6{
  		margin: auto;
  		text-align: center;
@@ -109,8 +123,11 @@
 		overflow: hidden;
 		height: 140px;
 		width: 80%;
+		font-size: 10px;
 		display: none;
 		margin: auto;
+		padding-left: 10px;
+		padding-top: 6px;
 	}
 	.apiurl{
 		resize: none;
@@ -123,7 +140,17 @@
 	.hidden{
 		display: none;
 	}
+	::-moz-selection { /* Code for Firefox */
+    color: white;
+    background: rgba(255,0,0,0.6);
+}
+
+::selection {
+    color: white; 
+    background: rgba(255,0,0,0.6);
+}
  </style>
+<link href="https://fonts.googleapis.com/css?family=Nosifer" rel="stylesheet">
 <script type="text/javascript" src="js.js"></script>
 
 <body>
@@ -259,9 +286,6 @@ if(yes){
 		<p>Place this code wherever you want the plugin to appear on your page.</p>
 			<textarea onclick="this.select()" class="generated"></textarea>
 		<hr>
-		<p>Include the JavaScript Tag on your page once, ideally right after the opening &lt;head> tag.</p>
-		<textarea onclick="this.select()" class="apiurl">&lt;script type="text/javascript" src="https://bichiko.github.io/binary-clock/js.js">&lt;/script></textarea>
-
 		</div>
 
 	</div>
@@ -273,15 +297,16 @@ if(yes){
 		function showCode(){
 				document.querySelector('.generated').style.display="block"
 					document.querySelector('.generated').innerHTML = ""+
-						"&lt;script type='text/javascript' class='binaryClock'>"+
-						"new binaryClock({"+
-						"width: "+elements[0].value+","+
-						"height: "+elements[1].value+","+
-						"labels: "+(elements[2].value==1?'true':'false') +","+
-						"labelcolor: '"+elements[3].value+"',"+
-						"emptybitcolor: '"+elements[4].value+"',"+
-						"filledbitcolor: '" + elements[5].value+"'"+
-						"})"+
+						"&lt;script type='text/javascript' src='https://bichiko.github.io/binary-clock/js.js'>&lt;/script>\n"+
+						"&lt;script type='text/javascript' class='binaryClock'>\n"+
+						"new binaryClock({\n"+
+						"  width: "+elements[0].value+",\n"+
+						"  height: "+elements[1].value+",\n"+
+						"  labels: "+(elements[2].value==1?'true':'false') +",\n"+
+						"  labelcolor: '"+elements[3].value+"',\n"+
+						"  emptybitcolor: '"+elements[4].value+"',\n"+
+						"  filledbitcolor: '" + elements[5].value+"'"+
+						"\n});\n"+
 						"&lt;/script>"
 		}	
 		showCode()
