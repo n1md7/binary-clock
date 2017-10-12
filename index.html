@@ -12,6 +12,20 @@
 </head>
 <link href="https://fonts.googleapis.com/css?family=Bree+Serif" rel="stylesheet">
  <style type="text/css">
+::-webkit-scrollbar {
+width: 6px;
+/* for vertical scrollbars */
+height: 6px;
+/* for horizontal scrollbars */
+}
+
+::-webkit-scrollbar-track {
+	background: rgba(0, 0, 0, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+	background: rgba(255, 100, 0, 0.5);
+}
  h1{
 	font-family: 'Nosifer', cursive;
  }
@@ -128,6 +142,7 @@
 		margin: auto;
 		padding-left: 10px;
 		padding-top: 6px;
+		color: rgba(255,100,0,0.9);
 	}
 	.apiurl{
 		resize: none;
@@ -197,7 +212,7 @@ if(yes){
 			document.getElementsByName('labelcolor')[0].value = defaultColors.label
 			document.getElementsByName('filledbitcolor')[0].value = defaultColors.fBitColor
 			document.getElementsByName('emptybitcolor')[0].value = defaultColors.ebitColor
-			
+
 			document.querySelector('.followme').onclick=function(){
 				document.querySelector('.hidden').style.display='block'
 				document.querySelector('.nohidden').style.display='none'
@@ -303,7 +318,7 @@ if(yes){
 		</script>
 		<div class="innerDiv">
 		<p>Place this code wherever you want the plugin to appear on your page.</p>
-			<textarea onclick="this.select()" class="generated"></textarea>
+			<textarea onclick="this.select()" class="generated" spellcheck="false"></textarea>
 		<hr>
 		</div>
 
