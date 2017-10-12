@@ -128,11 +128,10 @@
 
 <body>
 <div class="container">
-	<h1>Binary Clock API</h1>
+	<h1><em>Binary</em> Clock API</h1>
 	<hr>
 <div class="nohidden">
 	
-	<!-- <div class="myBinaryClockContainer"  data-width='200' data-labels='true' data-height='30' data-strokecolor='rgba(255,9,255,0.5)' data-fillboxcolor='rgba(255,0,0,0.9)' data-color='rgba(255,0,0,0.5)'></div> -->
 	<div class="innerDiv">
 		<h3>Do you want Binary Clock in your web page?</h3>
 		<br>
@@ -181,7 +180,6 @@ if(yes){
 		<hr>
 		<label for="labels">Show Labels?:</label>
 		<span><i>show</i></span><input type="checkbox" checked="" name="label" value="true">
-		<!-- <span><i>hide</i></span><input type="radio" name="label" value="true"> -->
 		<br>
 		<br>
 		<label for="width">Width:</label>
@@ -258,8 +256,6 @@ if(yes){
 
 		</script>
 		<div class="innerDiv">
-		<h3>Press <em>Generate</em> to see content</h3>
-		<hr>
 		<p>Place this code wherever you want the plugin to appear on your page.</p>
 			<textarea onclick="this.select()" class="generated"></textarea>
 		<hr>
@@ -278,16 +274,15 @@ if(yes){
 				document.querySelector('.generated').style.display="block"
 					document.querySelector('.generated').innerHTML = ""+
 						"&lt;script type='text/javascript' class='binaryClock'>"+
-						"   new binaryClock({"+
-						"	    width: "+elements[0].value+","+
-						" 	    height: "+elements[1].value+","+
-						"	    labels: "+elements[2].value+","+
-						"	    labelcolor: '"+elements[3].value+"',"+
-						"	    emptybitcolor: '"+elements[4].value+"',"+
-						"	    filledbitcolor: '" + elements[5].value+"'"+
+						"new binaryClock({"+
+						"width: "+elements[0].value+","+
+						"height: "+elements[1].value+","+
+						"labels: "+(elements[2].value==1?'true':'false') +","+
+						"labelcolor: '"+elements[3].value+"',"+
+						"emptybitcolor: '"+elements[4].value+"',"+
+						"filledbitcolor: '" + elements[5].value+"'"+
 						"})"+
 						"&lt;/script>"
-					// document.querySelector('.generated').select()
 		}	
 		showCode()
 </script>
@@ -295,4 +290,3 @@ if(yes){
 
 </body>
 </html>
-		<!-- <div class="myBinaryClockContainer"  data-width='200' data-labels='true' data-height='30' data-strokecolor='rgba(255,9,255,0.5)' data-fillboxcolor='rgba(255,0,0,0.9)' data-color='rgba(255,0,0,0.5)'></div> -->
